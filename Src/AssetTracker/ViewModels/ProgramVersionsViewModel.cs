@@ -43,7 +43,7 @@ namespace AssetTracker.ViewModels
         public IEnumerable<IResult> NewVersion()
         {
             var vm = new AddProgramVersionViewModel();
-            var result = _windowManager.ShowDialog(vm, null, null);
+            var result = _windowManager.ShowDialog(vm, null);
             
             if(result == true)
             {

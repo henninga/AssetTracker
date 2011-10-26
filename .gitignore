@@ -9,10 +9,10 @@ build/
 *.sln.cache
 _ReSharper.*/
 *.user
-/Data/Data
-/Data/IndexDefinitions/
-/Data/Index/
-/Data/logs/
-/Data/system/
-/Data/temp/
+*/server/Data/Data
+*/server/Data/IndexDefinitions/
+*/server/Data/Index/
+*/server/Data/logs/
+*/server/Data/system/
+*/server/Data/temp/
 *.InstallLog
