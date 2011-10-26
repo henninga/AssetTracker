@@ -20,3 +20,5 @@ _ReSharper.*/
 */server/Data/
 */server/Data/*
 *.InstallLog
+/Src/packages/*/server/Data/
+/Src/packages/*/server/Logs/
