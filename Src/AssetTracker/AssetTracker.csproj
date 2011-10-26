@@ -123,6 +123,7 @@
     <Compile Include="Commands\AddProgram.cs" />
     <Compile Include="Commands\AddVersionToProgram.cs" />
     <Compile Include="Commands\CommandResult.cs" />
+    <Compile Include="Commands\EditProgram.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Configuration\AssetTrackerRegistry.cs" />
     <Compile Include="Configuration\DebugLog.cs" />
@@ -143,13 +144,14 @@
     <Compile Include="UserControls\HyperlinkButton.cs" />
     <Compile Include="ViewModels\AddProgramViewModel.cs" />
     <Compile Include="ViewModels\AllProgramsViewModel.cs" />
-    <Compile Include="ViewModels\AddProgramVersionViewModel.cs" />
+    <Compile Include="ViewModels\AddVersionViewModel.cs" />
+    <Compile Include="ViewModels\EditProgramViewModel.cs" />
     <Compile Include="ViewModels\NoProgramsViewModel.cs" />
-    <Compile Include="ViewModels\ProgramVersionLicenseViewModel.cs" />
-    <Compile Include="ViewModels\ProgramVersionsViewModel.cs" />
+    <Compile Include="ViewModels\IndividualLicenseViewModel.cs" />
+    <Compile Include="ViewModels\ProgramOverviewViewModel.cs" />
     <Compile Include="ViewModels\IndividualResultViewModel.cs" />
     <Compile Include="ViewModels\NoResultsViewModel.cs" />
-    <Compile Include="ViewModels\ProgramVersionViewModel.cs" />
+    <Compile Include="ViewModels\VersionViewModel.cs" />
     <Compile Include="ViewModels\ProgramViewModel.cs" />
     <Compile Include="ViewModels\ResultsViewModel.cs" />
     <Compile Include="ViewModels\SearchResultsViewModel.cs" />
@@ -212,7 +214,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\AddProgramVersionView.xaml">
+    <Page Include="Views\AddVersionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditProgramView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -228,15 +234,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\ProgramVersionLicenseView.xaml">
+    <Page Include="Views\IndividualLicenseView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\ProgramVersionView.xaml">
+    <Page Include="Views\VersionView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\ProgramVersionsView.xaml">
+    <Page Include="Views\ProgramOverviewView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

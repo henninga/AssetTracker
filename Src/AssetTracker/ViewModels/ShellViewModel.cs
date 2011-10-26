@@ -58,7 +58,7 @@ namespace AssetTracker.ViewModels
                                     .AsResult();
 
                 yield return getProgram;
-                yield return Show.Screen<ProgramVersionsViewModel>()
+                yield return Show.Screen<ProgramOverviewViewModel>()
                             .Configured(x => x.WithData(getProgram.Response));
             }
             else if (responseCount > 0)

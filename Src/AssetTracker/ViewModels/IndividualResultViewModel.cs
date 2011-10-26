@@ -27,7 +27,7 @@ namespace AssetTracker.ViewModels
             var getProgram = new GetProgram(Id)
                 .AsResult();
             yield return getProgram;
-            yield return Show.Screen<ProgramVersionsViewModel>()
+            yield return Show.Screen<ProgramOverviewViewModel>()
                             .Configured(x => x.WithData(getProgram.Response));
             yield return Show.NotBusy();
         }
