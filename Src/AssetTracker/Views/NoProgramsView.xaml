@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="AssetTracker.Views.NoProgramsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" xmlns:local="clr-namespace:AssetTracker.UserControls">
+    <StackPanel>
+        <TextBlock Text="No applications has been registered." HorizontalAlignment="Center" />
+        <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+            <TextBlock Text=" Would you like to " />
+            <local:HyperlinkButton x:Name="AddProgram">
+                <TextBlock Text="Create a New Application"
+                               TextDecorations="Underline" />
+            </local:HyperlinkButton>
+            <TextBlock Text="?" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

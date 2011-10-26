@@ -1,0 +1,19 @@
+﻿<Application x:Class="AssetTracker.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:local="clr-namespace:AssetTracker.Configuration" xmlns:Configuration="clr-namespace:AssetTracker.Configuration">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/ColorsAndBrushes.xaml" />
+                <ResourceDictionary Source="Resources/DefaultStyles.xaml" />
+                <ResourceDictionary Source="Resources/NamedStyles.xaml" />
+                <ResourceDictionary>
+                    <Configuration:AppBootstrapper x:Key="bootstrapper" />
+                </ResourceDictionary>
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

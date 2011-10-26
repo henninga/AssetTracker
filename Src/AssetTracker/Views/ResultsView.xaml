@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="AssetTracker.Views.ResultsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
+    <StackPanel>
+        <ItemsControl x:Name="Results" >
+            
+        </ItemsControl>
+        
+    </StackPanel>
+</UserControl>
+<!--<ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock x:Name="Name" Text="{Binding Name}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>-->

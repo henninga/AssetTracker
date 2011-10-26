@@ -1,0 +1,21 @@
+time;logger;level;message;exception
+2011-10-24 17:49:08.3654;Raven.Database.Impl.DocumentCacher;Info;"MemoryCache Settings:
+  PhysicalMemoryLimit = 99
+  CacheMemoryLimit    = 3147825152
+  PollingInterval     = 00:02:00";
+2011-10-24 17:49:08.3994;Raven.Storage.Esent.TransactionalStorage;Info;"Esent Settings:
+  MaxVerPages      = 32768
+  CacheSizeMax     = 262144
+  DatabasePageSize = 4096";
+2011-10-24 17:49:09.3635;Raven.Database.DocumentDatabase;Debug;Delete a document with key: Raven/Backup/Status and etag ;
+2011-10-24 17:49:09.3715;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Backup/Status' was not found, and considered deleted;
+2011-10-24 17:53:18.2714;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2011-10-24 17:53:18.2904;Raven.Database.Server.HttpServer;Debug;Request #   1: GET     -    44 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2011-10-24 17:53:25.0621;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2011-10-24 17:53:25.0621;Raven.Database.Server.HttpServer;Debug;Request #   2: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2011-10-24 17:53:28.3564;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2011-10-24 17:53:28.3564;Raven.Database.Server.HttpServer;Debug;Request #   3: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2011-10-24 17:53:42.9049;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2011-10-24 17:53:42.9049;Raven.Database.Server.HttpServer;Debug;Request #   4: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2011-10-24 17:54:34.4500;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2011-10-24 17:54:34.4500;Raven.Database.Server.HttpServer;Debug;Request #   5: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
