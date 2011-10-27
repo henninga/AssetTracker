@@ -22,7 +22,7 @@ namespace AssetTracker.Commands
             var program = session.Load<Program>(_id);
             program.Name = _name;
             program.Notes = _notes;
-            session.Store(program);
+            
             reply();
         }
     }

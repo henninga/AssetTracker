@@ -9,9 +9,9 @@ namespace AssetTracker.ViewModels
     public class EditProgramViewModel : Screen
     {
         bool _wasSaved;
-        public string Name { get; private set; }
-        public string Notes { get; private set; }
-        public string Id { get; private set; }
+        public string Name { get; set; }
+        public string Notes { get; set; }
+        public string Id { get; set; }
 
         public bool CanSave
         {
