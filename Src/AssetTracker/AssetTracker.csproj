@@ -120,6 +120,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\AddLicenseToProgram.cs" />
     <Compile Include="Commands\AddProgram.cs" />
     <Compile Include="Commands\AddVersionToProgram.cs" />
     <Compile Include="Commands\CommandResult.cs" />
@@ -140,11 +141,13 @@
     <Compile Include="Queries\IQuery.cs" />
     <Compile Include="Queries\QueryResult.cs" />
     <Compile Include="Queries\SearchPrograms.cs" />
+    <Compile Include="Triggers\Triggers.cs" />
     <Compile Include="UserControls\BusyIndicator.cs" />
     <Compile Include="UserControls\HyperlinkButton.cs" />
     <Compile Include="ViewModels\AddProgramViewModel.cs" />
     <Compile Include="ViewModels\AllProgramsViewModel.cs" />
     <Compile Include="ViewModels\AddVersionViewModel.cs" />
+    <Compile Include="ViewModels\AddLicenseViewModel.cs" />
     <Compile Include="ViewModels\EditProgramViewModel.cs" />
     <Compile Include="ViewModels\NoProgramsViewModel.cs" />
     <Compile Include="ViewModels\IndividualLicenseViewModel.cs" />
@@ -215,6 +218,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AddVersionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddLicenseView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

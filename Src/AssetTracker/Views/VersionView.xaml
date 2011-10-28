@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              xmlns:local="clr-namespace:AssetTracker.UserControls" >
 
-    <StackPanel Orientation="Vertical">
-        <local:HyperlinkButton x:Name="NewLicense" Style="{StaticResource newLicense}" />
-        <ListBox x:Name="Licenses" Style="{StaticResource licenses}" />
-    </StackPanel>
+    <DockPanel LastChildFill="True">
+        <local:HyperlinkButton DockPanel.Dock="Top" x:Name="NewLicense" HorizontalAlignment="Right" >
+            <TextBlock Text="+ Ny lisens" />
+        </local:HyperlinkButton>
+        <ListBox x:Name="Licenses"
+                 DockPanel.Dock="Bottom"
+                 Style="{StaticResource licenses}" 
+                 ScrollViewer.CanContentScroll="True" 
+                 VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Stretch"/>
+    </DockPanel>
 
 </UserControl>

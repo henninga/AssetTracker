@@ -20,6 +20,7 @@ namespace AssetTracker.Commands
         public void Execute(IDocumentSession session, Action reply)
         {
             var program = session.Load<Program>(_id);
+            
             program.Name = _name;
             program.Notes = _notes;
             

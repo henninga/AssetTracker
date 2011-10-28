@@ -26,6 +26,12 @@
                         </Storyboard>
                     </VisualState>
                 </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused">
+                        
+                    </VisualState>
+                    <VisualState x:Name="Unfocused"/>
+                </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <ContentPresenter x:Name="contentPresenter"
                               ContentTemplate="{TemplateBinding ContentTemplate}"

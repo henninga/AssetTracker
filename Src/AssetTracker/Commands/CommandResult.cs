@@ -5,11 +5,12 @@ using Raven.Client;
 
 namespace AssetTracker.Commands
 {
-    public class CommandResult : IResult
+    public class CommandResult<T> : IResult where T : ICommand
     {
-        readonly ICommand _command;
+        readonly T _command;
+        public T Command { get { return _command; } }
 
-        public CommandResult(ICommand command)
+        public CommandResult(T command)
         {
             _command = command;
         }

@@ -46,7 +46,7 @@ namespace AssetTracker.ViewModels
             yield return Show.Busy();
             yield return Show.Screen<SearchResultsViewModel>();
             var search = new SearchPrograms(SearchText)
-                                .AsResult();
+                                .AsQuery();
             yield return search;
 
             var responseCount = search.Response.Count();
@@ -55,7 +55,7 @@ namespace AssetTracker.ViewModels
             else if (responseCount == 1 && string.Compare(search.Response.First().Name, SearchText,true) == 0)
             {
                 var getProgram = new GetProgram(search.Response.First().Id)
-                                    .AsResult();
+                                    .AsQuery();
 
                 yield return getProgram;
                 yield return Show.Screen<ProgramOverviewViewModel>()
@@ -70,6 +70,11 @@ namespace AssetTracker.ViewModels
         public bool CanExecuteSearch
         {
             get { return !string.IsNullOrEmpty(SearchText); }
+        }
+
+        public void Save()
+        {
+            
         }
     }
 }

@@ -18,10 +18,10 @@ namespace AssetTracker.ViewModels
 
         public object Results { get; set; }
 
-        public IEnumerator<IResult> Go()
+        public IEnumerator<IResult> GetAllPrograms()
         {
             var search = new GetAllPrograms()
-                .AsResult();
+                .AsQuery();
             yield return Show.Busy();
             yield return search;
             if (search.Response.Count() == 0)
@@ -34,7 +34,12 @@ namespace AssetTracker.ViewModels
 
         protected override void OnActivate()
         {
-            Coroutine.BeginExecute(Go());
+            Coroutine.BeginExecute(GetAllPrograms());
+        }
+
+        public IResult NewProgram()
+        {
+            return Show.Screen<AddProgramViewModel>();
         }
     }
 }

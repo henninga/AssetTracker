@@ -42,16 +42,10 @@
         <Setter Property="ItemTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Version}" />
-                        <Button Content="X"
-                                cal:Message.Attach="DeactivateItem($dataContext, 'true')" />
-                    </StackPanel>
+                    <TextBlock Text="{Binding Version}" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>
-        
-        <!--<Setter Property="Height" Value="500" />-->
     </Style>
 
 
@@ -98,16 +92,29 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="UserControls:HyperlinkButton" x:Key="newLicense">
+    <!--<Style TargetType="UserControls:HyperlinkButton" x:Key="newLicense">
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <TextBlock Text="+ Ny lisens" />
+                    
                 </DataTemplate>
             </Setter.Value>
         </Setter>
         <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>-->
 
+    <Style TargetType="UserControls:HyperlinkButton" x:Key="newProgram">
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="+" Style="{StaticResource plusSign}" VerticalAlignment="Center"/>
+                        <TextBlock Text=" Nytt program" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalAlignment" Value="Right" />
     </Style>
 
     <!--

@@ -3,11 +3,5 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
     <StackPanel>
         <TextBlock Text="No search results" />
-        
     </StackPanel>
 </UserControl>
-<!--<ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock x:Name="Name" Text="{Binding Name}" />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>-->

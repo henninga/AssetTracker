@@ -3,7 +3,7 @@
                     xmlns:ti="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
 
                     xmlns:tl="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit" 
-                    xmlns:UserControls="clr-namespace:AssetTracker.UserControls">
+                    xmlns:UserControls="clr-namespace:AssetTracker.UserControls" xmlns:Interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:local="clr-namespace:AssetTracker.Triggers" xmlns:cl="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ControlTemplates/Manifest.xaml" />
     </ResourceDictionary.MergedDictionaries>
@@ -76,7 +76,7 @@
         <!--<Setter Property="Template"
                 Value="{StaticResource textBox}" />-->
     </Style>
-
+    
     <Style TargetType="Button">
         <Setter Property="Background"
                 Value="Transparent" />
@@ -98,6 +98,14 @@
                 Value="{StaticResource button}" />
     </Style>
 
-    
+    <Style TargetType="ListBoxItem">
+        <Style.Resources>
+            <!--SelectedItem with focus-->
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="LightBlue" Opacity=".4"/>
+            <!--SelectedItem without focus-->
+            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="LightBlue" Opacity=".4"/>
+        </Style.Resources>
+    </Style>
+
 
 </ResourceDictionary>

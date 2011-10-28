@@ -22,7 +22,7 @@ namespace AssetTracker.ViewModels
         {
             yield return Show.Busy();
             var editProgram = new EditProgram(Id,Name, Notes)
-                .AsResult();
+                .AsCommand();
 
             _wasSaved = true;
             yield return editProgram;

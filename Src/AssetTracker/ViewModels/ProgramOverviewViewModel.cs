@@ -48,9 +48,9 @@ namespace AssetTracker.ViewModels
             if(result == true)
             {
                 yield return Show.Busy();
-                yield return new AddVersionToProgram(Id, vm.Input).AsResult();
+                yield return new AddVersionToProgram(Id, vm.Input).AsCommand();
                 var getProgram = new GetProgram(Id)
-                    .AsResult();
+                    .AsQuery();
                 yield return getProgram;
                 yield return Show.Screen<ProgramOverviewViewModel>()
                                 .Configured(x => x.WithData(getProgram.Response));
@@ -77,15 +77,17 @@ namespace AssetTracker.ViewModels
 
             source.ProgramVersions.Each(x =>
             {
-                var versionViewModel = new VersionViewModel()
+                var versionViewModel = new VersionViewModel(_windowManager)
                 {
+                    ProgramId = Id,
                     Version = x.Version,
                 };
 
-                if (x.VersionLicenseses != null)
+                if (x.Licenses != null)
                 {
-                    x.VersionLicenseses.Each(license => versionViewModel.Licenses.Add(new IndividualLicenseViewModel()
+                    x.Licenses.Each(license => versionViewModel.Licenses.Add(new IndividualLicenseViewModel()
                                                                                       {
+                                                                                          Username = license.Username,
                                                                                           Key = license.Key
                                                                                       }));
                 }

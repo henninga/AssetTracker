@@ -8,6 +8,7 @@ namespace AssetTracker.Commands
     {
         readonly string _name;
         readonly string _notes;
+        public string GeneratedId { get; private set; }
 
         public AddProgram(string name, string notes)
         {
@@ -17,11 +18,9 @@ namespace AssetTracker.Commands
 
         public void Execute(IDocumentSession session, Action reply)
         {
-            session.Store(new Program()
-                          {
-                              Name = _name,
-                              Notes = _notes
-                          });
+            var program = new Program(_name, _notes);
+            session.Store(program);
+            GeneratedId = program.Id;
             reply();
         }
     }
