@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="AssetTracker.Views.VersionView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-             xmlns:local="clr-namespace:AssetTracker.UserControls" >
+             xmlns:local="clr-namespace:AssetTracker.UserControls" xmlns:cm="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
 
     <DockPanel LastChildFill="True">
         <local:HyperlinkButton DockPanel.Dock="Top" x:Name="NewLicense" HorizontalAlignment="Right" >
@@ -12,7 +12,37 @@
                  Style="{StaticResource licenses}" 
                  ScrollViewer.CanContentScroll="True" 
                  VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Stretch"/>
+                 HorizontalContentAlignment="Stretch">
+
+            <ListBox.ItemTemplate >
+                <DataTemplate >
+                    <Border Background="Transparent"> <!--Background is set to Transparent so the context menu will appear on the entire item and not where controls are painted/displayed.-->
+                        <ContentControl cm:View.Model="{Binding}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" IsTabStop="False" />
+
+                        <ContextMenuService.ContextMenu>
+                            <ContextMenu >
+                                <MenuItem Header="Copy to clipboard" cm:Message.Attach="[Event Click] = [Action CopyKey()]" />
+                            </ContextMenu>
+                        </ContextMenuService.ContextMenu>
+                    </Border>
+                </DataTemplate>
+                <!--<DataTemplate>
+
+                    <Border BorderThickness="1">
+                        <ContentControl cm:View.Model="{Binding}"></ContentControl>
+                        
+                    </Border>
+
+
+
+                </DataTemplate>-->
+            </ListBox.ItemTemplate>
+            <!--<ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Insert Node" x:Name="CopyKey" cm:Message.Attach="[Event Click] = [Action CopyKey($dataContext)]" cm:Action.TargetWithoutContext="{Binding Path=DataContext, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}}" ></MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>-->
+        </ListBox>
     </DockPanel>
 
 </UserControl>

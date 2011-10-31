@@ -25,7 +25,7 @@
         <Setter Property="VerticalContentAlignment"
                 Value="Stretch" />
     </Style>
-    
+
     <Style TargetType="UserControls:BusyIndicator">
         <Setter Property="IsTabStop"
                 Value="False" />
@@ -55,7 +55,7 @@
         <Setter Property="Template"
                 Value="{StaticResource hyperlinkButton}" />
     </Style>
-    
+
     <Style TargetType="TextBox">
         <Setter Property="BorderThickness"
                 Value="1" />
@@ -76,7 +76,7 @@
         <!--<Setter Property="Template"
                 Value="{StaticResource textBox}" />-->
     </Style>
-    
+
     <Style TargetType="Button">
         <Setter Property="Background"
                 Value="Transparent" />
@@ -106,6 +106,4 @@
             <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="LightBlue" Opacity=".4"/>
         </Style.Resources>
     </Style>
-
-
 </ResourceDictionary>
