@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using AssetTracker.Framework;
@@ -37,8 +39,18 @@ namespace AssetTracker.Configuration
                 return false;
             };
         }
-        
-        
+
+        protected override void OnStartup(object sender, StartupEventArgs e)
+        {
+            var currentUser = WindowsIdentity.GetCurrent();
+            if (currentUser == null || !currentUser.IsAuthenticated || currentUser.IsAnonymous)
+                return;
+
+            Thread.CurrentPrincipal = new WindowsPrincipal(currentUser);
+            AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
+            base.OnStartup(sender, e);
+
+        }
 
         protected override object GetInstance(Type serviceType, string key)
         {

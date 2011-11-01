@@ -108,6 +108,8 @@ namespace AssetTracker.ViewModels
                 {
                     x.Licenses.Each(license => versionViewModel.Licenses.Add(new IndividualLicenseViewModel()
                                                                                       {
+                                                                                          Version = x.Version,
+                                                                                          ProgramId = source.Id,
                                                                                           Username = license.Username,
                                                                                           Key = license.Key
                                                                                       }));

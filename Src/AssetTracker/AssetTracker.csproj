@@ -123,6 +123,7 @@
     <Compile Include="Commands\AddLicenseToProgram.cs" />
     <Compile Include="Commands\AddProgram.cs" />
     <Compile Include="Commands\AddVersionToProgram.cs" />
+    <Compile Include="Commands\AssignUser.cs" />
     <Compile Include="Commands\CommandResult.cs" />
     <Compile Include="Commands\DeleteVersion.cs" />
     <Compile Include="Commands\EditProgram.cs" />
