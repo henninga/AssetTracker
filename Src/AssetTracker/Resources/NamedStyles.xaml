@@ -25,6 +25,12 @@
         <Setter Property="FontFamily" Value="Trebuchet MS" />
 
     </Style>
+    <Style TargetType="TextBlock" x:Key="deleteSign">
+        <Setter Property="Foreground" Value="Red" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="FontFamily" Value="Trebuchet MS" />
+
+    </Style>
 
 
     <Style TargetType="TabControl">

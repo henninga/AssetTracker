@@ -17,21 +17,21 @@ namespace AssetTracker.Model
 
         public string Name { get; set; }
         public string Notes { get; set; }
-        public IList<ProgramVersion> ProgramVersions { get; set; }
+        public IList<ProgramVersion> Versions { get; set; }
     }
 
     public class ProgramVersion
     {
         public ProgramVersion()
         {
-            Licenses = new List<ProgramVersionLicense>();
+            Licenses = new List<VersionLicense>();
         }
 
         public string Version { get; set; }
-        public IList<ProgramVersionLicense> Licenses { get; set; }
+        public IList<VersionLicense> Licenses { get; set; }
     }
 
-    public class ProgramVersionLicense
+    public class VersionLicense
     {
         public string Key { get; set; }
         public string Username { get; set; }

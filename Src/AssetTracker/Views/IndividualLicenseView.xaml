@@ -13,7 +13,16 @@
             <Button x:Name="AssignUser" Content="Tildel" />
             <Button x:Name="EditLicense" Content="Endre" />
             <Button x:Name="DeleteLicense" Content="Slett" />
-                
+            
         </StackPanel>
+        
     </DockPanel>
+    <i:Interaction.Triggers>
+        <local:InputBindingTrigger >
+            <local:InputBindingTrigger.InputBinding >
+                <KeyBinding Modifiers="Ctrl" Key="C"/>
+            </local:InputBindingTrigger.InputBinding>
+            <cl:ActionMessage MethodName="CopyKey" />
+        </local:InputBindingTrigger>
+    </i:Interaction.Triggers>
 </UserControl>

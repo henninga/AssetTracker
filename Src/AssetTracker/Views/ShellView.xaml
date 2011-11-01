@@ -16,9 +16,11 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBox x:Name="SearchText" Width="200" AcceptsReturn="False" />
                 <Button x:Name="ExecuteSearch" Content="Search" IsDefault="True" />
+
             </StackPanel>
         </StackPanel>
 
         <ContentControl x:Name="ActiveItem" Margin="20 30 20 20"/>
+        
     </DockPanel>
 </Window>

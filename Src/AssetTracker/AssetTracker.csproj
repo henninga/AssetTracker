@@ -124,6 +124,7 @@
     <Compile Include="Commands\AddProgram.cs" />
     <Compile Include="Commands\AddVersionToProgram.cs" />
     <Compile Include="Commands\CommandResult.cs" />
+    <Compile Include="Commands\DeleteVersion.cs" />
     <Compile Include="Commands\EditProgram.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Configuration\AssetTrackerRegistry.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="EventAggregator.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Framework\BusyResult.cs" />
+    <Compile Include="Framework\Copy.cs" />
     <Compile Include="Framework\EmptyResult.cs" />
     <Compile Include="Framework\Show.cs" />
     <Compile Include="Framework\ShowScreenResult.cs" />

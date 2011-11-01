@@ -21,6 +21,7 @@ namespace AssetTracker.ViewModels
         public string Notes { get; set; }
 
         public ObservableCollection<VersionViewModel> Versions { get; set; }
+        public VersionViewModel CurrentSelection { get; set; }
 
         public ProgramOverviewViewModel(IWindowManager windowManager, IEventAggregator events)
         {
@@ -40,12 +41,32 @@ namespace AssetTracker.ViewModels
             }
         }
 
+        public IEnumerable<IResult> DeleteVersion()
+        {
+            if (!Show.ConfirmationDialog("Vil du slette version?", "Slett version"))
+            {
+                yield return new EmptyResult();
+                yield break;
+                
+            }
+            
+            yield return Show.Busy();
+            
+            var deleteVersion = new DeleteVersion(Id, CurrentSelection.Version).AsCommand();
+            yield return deleteVersion;
+            var getProgram = new GetProgram(Id).AsQuery();
+            yield return getProgram;
+            yield return Show.Screen<ProgramOverviewViewModel>()
+                                .Configured(x => x.WithData(getProgram.Response));
+            yield return Show.NotBusy();
+        }
+
         public IEnumerable<IResult> NewVersion()
         {
             var vm = new AddVersionViewModel();
             var result = _windowManager.ShowDialog(vm, null);
-            
-            if(result == true)
+
+            if (result == true)
             {
                 yield return Show.Busy();
                 yield return new AddVersionToProgram(Id, vm.Input).AsCommand();
@@ -56,7 +77,7 @@ namespace AssetTracker.ViewModels
                                 .Configured(x => x.WithData(getProgram.Response));
                 yield return Show.NotBusy();
             }
-            
+
             yield return new EmptyResult();
         }
 
@@ -72,10 +93,10 @@ namespace AssetTracker.ViewModels
             Name = source.Name;
             Notes = source.Notes;
 
-            if (source.ProgramVersions == null)
+            if (source.Versions == null)
                 return;
 
-            source.ProgramVersions.Each(x =>
+            source.Versions.Each(x =>
             {
                 var versionViewModel = new VersionViewModel(_windowManager)
                 {

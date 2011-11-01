@@ -19,9 +19,9 @@ namespace AssetTracker.Commands
         public void Execute(IDocumentSession session, Action reply)
         {
             var program = session.Load<Program>(_programId);
-            if(program.ProgramVersions == null)
-                program.ProgramVersions = new List<ProgramVersion>();
-            program.ProgramVersions.Add(new ProgramVersion(){Version = _version});
+            if(program.Versions == null)
+                program.Versions = new List<ProgramVersion>();
+            program.Versions.Add(new ProgramVersion(){Version = _version});
             reply();
         }
     }

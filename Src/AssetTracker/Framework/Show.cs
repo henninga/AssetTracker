@@ -1,4 +1,7 @@
+using System;
+using System.Windows;
 using Caliburn.Micro;
+using MessageBox = Microsoft.Windows.Controls.MessageBox;
 
 namespace AssetTracker.Framework
 {
@@ -19,5 +22,15 @@ namespace AssetTracker.Framework
         {
             return new BusyResult(false);
         }
+
+
+        public static Func<string, string, bool> Confirmation = (text, header) => false;
+
+        public static bool ConfirmationDialog(string text, string header)
+        {
+            return Confirmation(text, header);
+        }
     }
+
+    
 }

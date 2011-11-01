@@ -24,8 +24,8 @@ namespace AssetTracker.Commands
         public void Execute(IDocumentSession session, Action reply)
         {
             var program = session.Load<Program>(_programId);
-            var version = program.ProgramVersions.Single(x => x.Version == _version);
-            version.Licenses.Add(new ProgramVersionLicense() { Username = _username, Key = _key });
+            var version = program.Versions.Single(x => x.Version == _version);
+            version.Licenses.Add(new VersionLicense() { Username = _username, Key = _key });
             reply();
         }
     }

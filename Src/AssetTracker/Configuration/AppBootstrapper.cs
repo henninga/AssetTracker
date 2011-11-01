@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using AssetTracker.Framework;
 using AssetTracker.UserControls;
 using Caliburn.Micro;
 using StructureMap;
@@ -22,7 +23,19 @@ namespace AssetTracker.Configuration
             ConventionManager.AddElementConvention<BusyIndicator>(BusyIndicator.IsBusyProperty, "IsBusy", null);
             ConventionManager.AddElementConvention<MenuItem>(MenuItem.CommandProperty, "Command", null);
             LogManager.GetLog = type => new DebugLog();
-            
+            Copy.CopyAction = source =>
+            {
+                Clipboard.SetText(source);
+            };
+
+            Show.Confirmation = (text, header) =>
+            {
+                var result = MessageBox.Show(text, header, MessageBoxButton.YesNo);
+                if(result == MessageBoxResult.Yes || result == MessageBoxResult.OK)
+                    return true;
+
+                return false;
+            };
         }
         
         

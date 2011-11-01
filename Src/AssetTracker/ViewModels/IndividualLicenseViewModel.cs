@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+using AssetTracker.Framework;
 using Caliburn.Micro;
 
 namespace AssetTracker.ViewModels
@@ -32,12 +33,12 @@ namespace AssetTracker.ViewModels
 
         public void DeleteLicense()
         {
-
+            
         }
 
         public void CopyKey()
         {
-            Clipboard.SetText(Key);
+            Key.ToClipboard();
             
         }
 

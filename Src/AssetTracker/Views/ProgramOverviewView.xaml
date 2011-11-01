@@ -15,13 +15,21 @@
                 </StackPanel>
                 <TextBlock x:Name="Notes" Text="{Binding Notes}" Style="{StaticResource smallEmphasis}" HorizontalAlignment="Center" />
             </StackPanel>
-            <local:HyperlinkButton x:Name="NewVersion" HorizontalAlignment="Right" VerticalAlignment="Top"  >
-                <StackPanel Orientation="Horizontal" >
-                    <TextBlock Text="+" Style="{StaticResource plusSign}" VerticalAlignment="Center"/>
-                    <TextBlock Text=" New version" VerticalAlignment="Center"/>
-                </StackPanel>
-            </local:HyperlinkButton>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <local:HyperlinkButton x:Name="NewVersion"  VerticalAlignment="Top" ToolTip="Create new version" >
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="+" Style="{StaticResource plusSign}" VerticalAlignment="Center"/>
+                        <TextBlock Text=" New version" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </local:HyperlinkButton>
+                <local:HyperlinkButton x:Name="DeleteVersion" VerticalAlignment="Top" Margin="5 0 0 0" ToolTip="Delete selected version"  >
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="x" Style="{StaticResource deleteSign}" VerticalAlignment="Center"/>
+                        <TextBlock Text=" Delete" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </local:HyperlinkButton>
+            </StackPanel>
         </StackPanel>
-        <TabControl x:Name="Items" DockPanel.Dock="Bottom" TabStripPlacement="Left" Margin="0 30 0 0"  />
+        <TabControl x:Name="Items" DockPanel.Dock="Bottom" TabStripPlacement="Left" Margin="0" SelectedItem="{Binding CurrentSelection}"  />
     </DockPanel>
 </UserControl>
