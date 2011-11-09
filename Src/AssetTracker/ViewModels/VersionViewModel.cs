@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using AssetTracker.Commands;
-using AssetTracker.Extensions;
 using AssetTracker.Framework;
-using AssetTracker.Queries;
 using Caliburn.Micro;
 
 namespace AssetTracker.ViewModels
@@ -25,8 +22,6 @@ namespace AssetTracker.ViewModels
 
         public IEnumerable<IResult> NewLicense()
         {
-
-
             var vm = new AddLicenseViewModel();
             var result = _windowManager.ShowDialog(vm, null);
 
@@ -34,12 +29,11 @@ namespace AssetTracker.ViewModels
             {
                 yield return Show.Busy();
                 yield return new AddLicenseToProgram(ProgramId, Version, vm.Username, vm.Key).AsCommand();
-                Licenses.Add(new IndividualLicenseViewModel(vm.Username, vm.Key, ProgramId, Version));
+                Licenses.Add(new IndividualLicenseViewModel(vm.Username, vm.Key, ProgramId, Version, null));
                 yield return Show.NotBusy();
             }
 
             yield return new EmptyResult();
-
         }
     }
 }

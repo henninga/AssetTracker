@@ -1,22 +1,24 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using AssetTracker.Commands;
-using AssetTracker.Model;
+using AssetTracker.DirectoryServices;
 using AssetTracker.Queries;
-using AssetTracker.ViewModels;
 
-namespace AssetTracker.Extensions
+namespace AssetTracker
 {
     public static class Extensions
     {
-        public static QueryResult<TResponse> AsQuery<TResponse>(this IQuery<TResponse> query)
+        public static RavenQueryResult<TResponse> AsQuery<TResponse>(this IRavenQuery<TResponse> ravenQuery)
         {
-            return new QueryResult<TResponse>(query);
+            return new RavenQueryResult<TResponse>(ravenQuery);
         }
 
-        public static CommandResult<T> AsCommand<T>(this T command)where T : ICommand
+        public static DirectoryQueryResult<TResponse> AsQuery<TResponse>(this IDirectoryQuery<TResponse> query)
+        {
+            return new DirectoryQueryResult<TResponse>(query);
+        }
+
+        public static CommandResult<T> AsCommand<T>(this T command) where T : ICommand
         {
             return new CommandResult<T>(command);
         }

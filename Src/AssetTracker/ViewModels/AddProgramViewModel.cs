@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using AssetTracker.Commands;
-using AssetTracker.Extensions;
 using AssetTracker.Framework;
 using AssetTracker.Queries;
 using Caliburn.Micro;
@@ -27,14 +26,10 @@ namespace AssetTracker.ViewModels
             _wasSaved = true;
             yield return addProgram;
             var getProgram = new GetProgram(addProgram.Command.GeneratedId)
-                                .AsQuery();
+                .AsQuery();
             yield return getProgram;
             yield return Show.Screen<ProgramOverviewViewModel>().Configured(x => x.WithData(getProgram.Response));
             yield return Show.NotBusy();
-
         }
-
-        
-        
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,15 +24,12 @@ namespace AssetTracker.Configuration
             ConventionManager.AddElementConvention<BusyIndicator>(BusyIndicator.IsBusyProperty, "IsBusy", null);
             ConventionManager.AddElementConvention<MenuItem>(MenuItem.CommandProperty, "Command", null);
             LogManager.GetLog = type => new DebugLog();
-            Copy.CopyAction = source =>
-            {
-                Clipboard.SetText(source);
-            };
+            Copy.CopyAction = source => { Clipboard.SetText(source); };
 
             Show.Confirmation = (text, header) =>
             {
                 var result = MessageBox.Show(text, header, MessageBoxButton.YesNo);
-                if(result == MessageBoxResult.Yes || result == MessageBoxResult.OK)
+                if (result == MessageBoxResult.Yes || result == MessageBoxResult.OK)
                     return true;
 
                 return false;
@@ -42,23 +38,22 @@ namespace AssetTracker.Configuration
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            var currentUser = WindowsIdentity.GetCurrent();
-            if (currentUser == null || !currentUser.IsAuthenticated || currentUser.IsAnonymous)
-                return;
+            //var currentUser = WindowsIdentity.GetCurrent();
+            //if (currentUser == null || !currentUser.IsAuthenticated || currentUser.IsAnonymous)
+            //    return;
 
-            Thread.CurrentPrincipal = new WindowsPrincipal(currentUser);
-            AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
+            //Thread.CurrentPrincipal = new WindowsPrincipal(currentUser);
+            //AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
             base.OnStartup(sender, e);
-
         }
 
         protected override object GetInstance(Type serviceType, string key)
         {
             return string.IsNullOrEmpty(key)
                        ? _container.GetInstance(serviceType)
-                       : _container.GetInstance(serviceType ?? typeof(object), key);
+                       : _container.GetInstance(serviceType ?? typeof (object), key);
         }
-        
+
         protected override IEnumerable<object> GetAllInstances(Type serviceType)
         {
             return _container.GetAllInstances(serviceType).Cast<object>();

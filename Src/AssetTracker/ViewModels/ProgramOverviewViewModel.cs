@@ -1,14 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using AssetTracker.Commands;
-using AssetTracker.Extensions;
 using AssetTracker.Framework;
-using AssetTracker.Messages;
 using AssetTracker.Model;
 using AssetTracker.Queries;
 using Caliburn.Micro;
-using Microsoft.Windows.Controls;
 
 namespace AssetTracker.ViewModels
 {
@@ -47,17 +43,16 @@ namespace AssetTracker.ViewModels
             {
                 yield return new EmptyResult();
                 yield break;
-                
             }
-            
+
             yield return Show.Busy();
-            
+
             var deleteVersion = new DeleteVersion(Id, CurrentSelection.Version).AsCommand();
             yield return deleteVersion;
             var getProgram = new GetProgram(Id).AsQuery();
             yield return getProgram;
             yield return Show.Screen<ProgramOverviewViewModel>()
-                                .Configured(x => x.WithData(getProgram.Response));
+                .Configured(x => x.WithData(getProgram.Response));
             yield return Show.NotBusy();
         }
 
@@ -74,7 +69,7 @@ namespace AssetTracker.ViewModels
                     .AsQuery();
                 yield return getProgram;
                 yield return Show.Screen<ProgramOverviewViewModel>()
-                                .Configured(x => x.WithData(getProgram.Response));
+                    .Configured(x => x.WithData(getProgram.Response));
                 yield return Show.NotBusy();
             }
 
@@ -84,7 +79,7 @@ namespace AssetTracker.ViewModels
         public IEnumerable<IResult> Edit()
         {
             yield return Show.Screen<EditProgramViewModel>()
-                                .Configured(x => x.WithData(Id, Name, Notes));
+                .Configured(x => x.WithData(Id, Name, Notes));
         }
 
         public void WithData(Program source)
@@ -99,20 +94,21 @@ namespace AssetTracker.ViewModels
             source.Versions.Each(x =>
             {
                 var versionViewModel = new VersionViewModel(_windowManager)
-                {
-                    ProgramId = Id,
-                    Version = x.Version,
-                };
+                                       {
+                                           ProgramId = Id,
+                                           Version = x.Version,
+                                       };
 
                 if (x.Licenses != null)
                 {
-                    x.Licenses.Each(license => versionViewModel.Licenses.Add(new IndividualLicenseViewModel()
-                                                                                      {
-                                                                                          Version = x.Version,
-                                                                                          ProgramId = source.Id,
-                                                                                          Username = license.Username,
-                                                                                          Key = license.Key
-                                                                                      }));
+                    x.Licenses.Each(license => versionViewModel.Licenses.Add(new IndividualLicenseViewModel
+                                                                             {
+                                                                                 Version = x.Version,
+                                                                                 ProgramId = source.Id,
+                                                                                 Username = license.Username,
+                                                                                 Key = license.Key,
+                                                                                 AssignedToUser = license.AssignedToUser
+                                                                             }));
                 }
                 Versions.Add(versionViewModel);
             });

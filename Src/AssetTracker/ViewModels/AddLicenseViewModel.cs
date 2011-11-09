@@ -1,15 +1,9 @@
-using System.Collections.Generic;
-using AssetTracker.Commands;
-using AssetTracker.Extensions;
-using AssetTracker.Framework;
-using AssetTracker.Messages;
 using Caliburn.Micro;
 
 namespace AssetTracker.ViewModels
 {
     public class AddLicenseViewModel : Screen
     {
-
         public AddLicenseViewModel()
         {
             DisplayName = "Add new license";

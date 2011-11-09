@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading;
-using System.Windows;
 using AssetTracker.Commands;
-using AssetTracker.Extensions;
+using AssetTracker.DirectoryServices;
 using AssetTracker.Framework;
 using Caliburn.Micro;
 
@@ -15,32 +13,31 @@ namespace AssetTracker.ViewModels
         {
         }
 
-        public IndividualLicenseViewModel(string username, string key, string programId, string version)
+        public IndividualLicenseViewModel(string username, string key, string programId, string version, DirectoryUser assignedToUser)
         {
             Username = username;
             Key = key;
             ProgramId = programId;
             Version = version;
+            AssignedToUser = assignedToUser;
         }
 
         public string Key { get; set; }
         public string Username { get; set; }
         public string ProgramId { get; set; }
         public string Version { get; set; }
-
-
+        public DirectoryUser AssignedToUser { get; set; }
 
         public IEnumerable<IResult> AssignUser()
         {
             yield return Show.Busy();
-            var assignUser = new AssignUser(ProgramId, Version, Username, Key, Thread.CurrentPrincipal.Identity.Name).AsCommand();
-            yield return assignUser;
+            yield return Show.Screen<AssignUserViewModel>()
+                             .Configured(x => x.WithData(Key, Username, ProgramId, Version, AssignedToUser));
             yield return Show.NotBusy();
         }
 
         public void DeleteLicense()
         {
-            
         }
 
         public void CopyKey()
@@ -55,7 +52,26 @@ namespace AssetTracker.ViewModels
 
         public void EditLicense()
         {
+        }
 
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != typeof (IndividualLicenseViewModel)) return false;
+            return Equals((IndividualLicenseViewModel) obj);
+        }
+
+        public bool Equals(IndividualLicenseViewModel other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return Equals(other.Key, Key);
+        }
+
+        public override int GetHashCode()
+        {
+            return (Key != null ? Key.GetHashCode() : 0);
         }
     }
 }

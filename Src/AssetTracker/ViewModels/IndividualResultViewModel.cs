@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using AssetTracker.Extensions;
+﻿using System.Collections.Generic;
 using AssetTracker.Framework;
 using AssetTracker.Queries;
 using Caliburn.Micro;
@@ -11,9 +9,9 @@ namespace AssetTracker.ViewModels
     {
         public IndividualResultViewModel()
         {
-            
         }
-        public IndividualResultViewModel(string id,string name)
+
+        public IndividualResultViewModel(string id, string name)
         {
             Name = name;
         }
@@ -28,10 +26,8 @@ namespace AssetTracker.ViewModels
                 .AsQuery();
             yield return getProgram;
             yield return Show.Screen<ProgramOverviewViewModel>()
-                            .Configured(x => x.WithData(getProgram.Response));
+                .Configured(x => x.WithData(getProgram.Response));
             yield return Show.NotBusy();
         }
-
-        
     }
 }

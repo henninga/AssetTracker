@@ -1,7 +1,5 @@
 using System;
-using System.Windows;
 using Caliburn.Micro;
-using MessageBox = Microsoft.Windows.Controls.MessageBox;
 
 namespace AssetTracker.Framework
 {
@@ -31,6 +29,4 @@ namespace AssetTracker.Framework
             return Confirmation(text, header);
         }
     }
-
-    
 }

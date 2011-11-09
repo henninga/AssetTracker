@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using AssetTracker.DirectoryServices;
 
 namespace AssetTracker.Model
 {
@@ -7,8 +7,8 @@ namespace AssetTracker.Model
     {
         public Program()
         {
-            
         }
+
         public Program(string name, string notes)
         {
             Name = name;
@@ -35,8 +35,7 @@ namespace AssetTracker.Model
     {
         public string Key { get; set; }
         public string Username { get; set; }
-        public string AssignedToName { get; set; }
-        public string AssignedToUser { get; set; }
+        public DirectoryUser AssignedToUser { get; set; }
     }
 
     public abstract class Entity

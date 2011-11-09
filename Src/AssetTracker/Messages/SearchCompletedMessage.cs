@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using AssetTracker.ViewModels;
-using Caliburn.Micro;
 
 namespace AssetTracker.Messages
 {
     public class SearchCompletedMessage
     {
-        private SearchCompletedMessage(object results)
+        SearchCompletedMessage(object results)
         {
             Results = results;
         }

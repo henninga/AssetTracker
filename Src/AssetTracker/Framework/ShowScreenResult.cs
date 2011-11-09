@@ -5,7 +5,7 @@ namespace AssetTracker.Framework
 {
     public class ShowScreenResult<T> : IResult
     {
-        private Action<T> _configruation;
+        Action<T> _configruation;
 
         public ShowScreenResult<T> Configured(Action<T> configuration)
         {
@@ -22,10 +22,10 @@ namespace AssetTracker.Framework
                 _configruation(screen);
 
             shell.ActivateItem(screen);
-            
+
             Completed(this, new ResultCompletionEventArgs());
         }
 
-        public event EventHandler<ResultCompletionEventArgs> Completed  = delegate { };
+        public event EventHandler<ResultCompletionEventArgs> Completed = delegate { };
     }
 }

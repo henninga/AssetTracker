@@ -5,7 +5,7 @@ namespace AssetTracker.Framework
 {
     public class BusyResult : IResult
     {
-        private readonly bool _isBusy;
+        readonly bool _isBusy;
 
         public BusyResult(bool isBusy)
         {
@@ -16,7 +16,7 @@ namespace AssetTracker.Framework
         {
             var shell = IoC.Get<IShell>();
             shell.IsBusy = _isBusy;
-            
+
             Completed(this, new ResultCompletionEventArgs());
         }
 

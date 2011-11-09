@@ -8,7 +8,11 @@ namespace AssetTracker.Commands
     public class CommandResult<T> : IResult where T : ICommand
     {
         readonly T _command;
-        public T Command { get { return _command; } }
+
+        public T Command
+        {
+            get { return _command; }
+        }
 
         public CommandResult(T command)
         {

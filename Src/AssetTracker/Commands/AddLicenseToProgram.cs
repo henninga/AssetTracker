@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Windows;
 using AssetTracker.Model;
 using Raven.Client;
 
@@ -25,7 +24,11 @@ namespace AssetTracker.Commands
         {
             var program = session.Load<Program>(_programId);
             var version = program.Versions.Single(x => x.Version == _version);
-            version.Licenses.Add(new VersionLicense() { Username = _username, Key = _key });
+            version.Licenses.Add(new VersionLicense
+                                 {
+                                     Username = _username,
+                                     Key = _key
+                                 });
             reply();
         }
     }

@@ -9,24 +9,24 @@ namespace AssetTracker.UserControls
     [TemplateVisualState(Name = "Hidden", GroupName = "VisibilityStates"),
      TemplateVisualState(Name = "Visible", GroupName = "VisibilityStates"),
      TemplateVisualState(Name = "Idle", GroupName = "BusyStatusStates"),
-     StyleTypedProperty(Property = "ProgressBarStyle", StyleTargetType = typeof(ProgressBar)),
+     StyleTypedProperty(Property = "ProgressBarStyle", StyleTargetType = typeof (ProgressBar)),
      TemplateVisualState(Name = "Busy", GroupName = "BusyStatusStates"),
-     StyleTypedProperty(Property = "OverlayStyle", StyleTargetType = typeof(Rectangle))]
+     StyleTypedProperty(Property = "OverlayStyle", StyleTargetType = typeof (Rectangle))]
     public class BusyIndicator : ContentControl
     {
         // Fields
         readonly DispatcherTimer _displayAfterTimer;
-        public static readonly DependencyProperty BusyContentProperty = DependencyProperty.Register("BusyContent", typeof(object), typeof(BusyIndicator), new PropertyMetadata(null));
-        public static readonly DependencyProperty BusyContentTemplateProperty = DependencyProperty.Register("BusyContentTemplate", typeof(DataTemplate), typeof(BusyIndicator), new PropertyMetadata(null));
-        public static readonly DependencyProperty DisplayAfterProperty = DependencyProperty.Register("DisplayAfter", typeof(TimeSpan), typeof(BusyIndicator), new PropertyMetadata(TimeSpan.FromSeconds(0.1)));
-        public static readonly DependencyProperty IsBusyProperty = DependencyProperty.Register("IsBusy", typeof(bool), typeof(BusyIndicator), new PropertyMetadata(false, OnIsBusyChanged));
-        public static readonly DependencyProperty OverlayStyleProperty = DependencyProperty.Register("OverlayStyle", typeof(Style), typeof(BusyIndicator), new PropertyMetadata(null));
-        public static readonly DependencyProperty ProgressBarStyleProperty = DependencyProperty.Register("ProgressBarStyle", typeof(Style), typeof(BusyIndicator), new PropertyMetadata(null));
+        public static readonly DependencyProperty BusyContentProperty = DependencyProperty.Register("BusyContent", typeof (object), typeof (BusyIndicator), new PropertyMetadata(null));
+        public static readonly DependencyProperty BusyContentTemplateProperty = DependencyProperty.Register("BusyContentTemplate", typeof (DataTemplate), typeof (BusyIndicator), new PropertyMetadata(null));
+        public static readonly DependencyProperty DisplayAfterProperty = DependencyProperty.Register("DisplayAfter", typeof (TimeSpan), typeof (BusyIndicator), new PropertyMetadata(TimeSpan.FromSeconds(0.1)));
+        public static readonly DependencyProperty IsBusyProperty = DependencyProperty.Register("IsBusy", typeof (bool), typeof (BusyIndicator), new PropertyMetadata(false, OnIsBusyChanged));
+        public static readonly DependencyProperty OverlayStyleProperty = DependencyProperty.Register("OverlayStyle", typeof (Style), typeof (BusyIndicator), new PropertyMetadata(null));
+        public static readonly DependencyProperty ProgressBarStyleProperty = DependencyProperty.Register("ProgressBarStyle", typeof (Style), typeof (BusyIndicator), new PropertyMetadata(null));
 
         // Methods
         public BusyIndicator()
         {
-            base.DefaultStyleKey = typeof(BusyIndicator);
+            base.DefaultStyleKey = typeof (BusyIndicator);
             _displayAfterTimer = new DispatcherTimer();
             base.Loaded += delegate { _displayAfterTimer.Tick += DisplayAfterTimerElapsed; };
             base.Unloaded += delegate
@@ -79,7 +79,7 @@ namespace AssetTracker.UserControls
 
         static void OnIsBusyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ((BusyIndicator)d).OnIsBusyChanged(e);
+            ((BusyIndicator) d).OnIsBusyChanged(e);
         }
 
         // Properties
@@ -91,19 +91,19 @@ namespace AssetTracker.UserControls
 
         public DataTemplate BusyContentTemplate
         {
-            get { return (DataTemplate)base.GetValue(BusyContentTemplateProperty); }
+            get { return (DataTemplate) base.GetValue(BusyContentTemplateProperty); }
             set { base.SetValue(BusyContentTemplateProperty, value); }
         }
 
         public TimeSpan DisplayAfter
         {
-            get { return (TimeSpan)base.GetValue(DisplayAfterProperty); }
+            get { return (TimeSpan) base.GetValue(DisplayAfterProperty); }
             set { base.SetValue(DisplayAfterProperty, value); }
         }
 
         public bool IsBusy
         {
-            get { return (bool)base.GetValue(IsBusyProperty); }
+            get { return (bool) base.GetValue(IsBusyProperty); }
             set { base.SetValue(IsBusyProperty, value); }
         }
 
@@ -111,13 +111,13 @@ namespace AssetTracker.UserControls
 
         public Style OverlayStyle
         {
-            get { return (Style)base.GetValue(OverlayStyleProperty); }
+            get { return (Style) base.GetValue(OverlayStyleProperty); }
             set { base.SetValue(OverlayStyleProperty, value); }
         }
 
         public Style ProgressBarStyle
         {
-            get { return (Style)base.GetValue(ProgressBarStyleProperty); }
+            get { return (Style) base.GetValue(ProgressBarStyleProperty); }
             set { base.SetValue(ProgressBarStyleProperty, value); }
         }
     }

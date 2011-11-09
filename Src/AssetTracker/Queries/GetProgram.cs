@@ -1,13 +1,10 @@
 using System;
-using AssetTracker.Extensions;
 using AssetTracker.Model;
-using AssetTracker.ViewModels;
 using Raven.Client;
-using Raven.Client.Linq;
 
 namespace AssetTracker.Queries
 {
-    public class GetProgram : IQuery<Program>
+    public class GetProgram : IRavenQuery<Program>
     {
         readonly string _id;
 
@@ -19,7 +16,7 @@ namespace AssetTracker.Queries
         public void Execute(IDocumentSession session, Action<Program> reply)
         {
             reply(
-                    session.Load<Program>(_id)
+                session.Load<Program>(_id)
                 );
         }
     }

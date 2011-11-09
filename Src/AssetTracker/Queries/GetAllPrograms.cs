@@ -8,9 +8,9 @@ using Raven.Client.Linq;
 
 namespace AssetTracker.Queries
 {
-    public class GetAllPrograms : IQuery<IEnumerable<IndividualResultViewModel>>
+    public class GetAllPrograms : IRavenQuery<IEnumerable<IndividualResultViewModel>>
     {
-        public void Execute(IDocumentSession session,Action<IEnumerable<IndividualResultViewModel>> reply)
+        public void Execute(IDocumentSession session, Action<IEnumerable<IndividualResultViewModel>> reply)
         {
             reply(
                 session.Query<Program>()

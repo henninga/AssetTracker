@@ -8,7 +8,7 @@ using Raven.Client.Linq;
 
 namespace AssetTracker.Queries
 {
-    public class SearchPrograms : IQuery<IEnumerable<IndividualResultViewModel>>
+    public class SearchPrograms : IRavenQuery<IEnumerable<IndividualResultViewModel>>
     {
         readonly string _searchText;
 
@@ -20,11 +20,8 @@ namespace AssetTracker.Queries
         public void Execute(IDocumentSession session, Action<IEnumerable<IndividualResultViewModel>> reply)
         {
             reply(
-                session.Query<Program>()
-                    .Where(x => x.Name.Contains(_searchText))
-                    .Select(x => new IndividualResultViewModel(x.Id, x.Name))
-                    .ToList()
-                );
+                session.Advanced.LuceneQuery<Program>().WhereContains("Name", _searchText + "*").Select(x => new IndividualResultViewModel(x.Id, x.Name))
+                 );
         }
     }
 }

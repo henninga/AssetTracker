@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using AssetTracker.Commands;
-using AssetTracker.Extensions;
 using AssetTracker.Framework;
 using Caliburn.Micro;
 
@@ -21,7 +20,7 @@ namespace AssetTracker.ViewModels
         public IEnumerable<IResult> Save()
         {
             yield return Show.Busy();
-            var editProgram = new EditProgram(Id,Name, Notes)
+            var editProgram = new EditProgram(Id, Name, Notes)
                 .AsCommand();
 
             _wasSaved = true;
