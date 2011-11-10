@@ -82,14 +82,14 @@ namespace AssetTracker.ViewModels
                 .Configured(x => x.WithData(Id, Name, Notes));
         }
 
-        public void WithData(Program source)
+        public ProgramOverviewViewModel WithData(Program source)
         {
             Id = source.Id;
             Name = source.Name;
             Notes = source.Notes;
 
             if (source.Versions == null)
-                return;
+                return this;
 
             source.Versions.Each(x =>
             {
@@ -112,6 +112,14 @@ namespace AssetTracker.ViewModels
                 }
                 Versions.Add(versionViewModel);
             });
+
+            return this;
+        }
+
+        public ProgramOverviewViewModel SelectedTab(VersionViewModel version)
+        {
+            CurrentSelection = version;
+            return this;
         }
     }
 }

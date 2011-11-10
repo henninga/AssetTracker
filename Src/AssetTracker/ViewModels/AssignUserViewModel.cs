@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows.Input;
 using AssetTracker.Commands;
@@ -23,7 +24,12 @@ namespace AssetTracker.ViewModels
         public IEnumerable<IResult> AssignUser()
         {
             var assignUser = new AssignUser(ProgramId, Version, Username, Key, SelectedUser).AsCommand();
+            var getProgram = new GetProgram(ProgramId).AsQuery();
+            yield return getProgram;
 
+            yield return Show.Screen<ProgramOverviewViewModel>()
+                             .Configured(x => x.WithData(getProgram.Response)
+                                               .SelectedTab(x.Versions.Single(v => v.Version == Version)));
             yield return assignUser;
         }
 
