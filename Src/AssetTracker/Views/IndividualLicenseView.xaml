@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:local="clr-namespace:AssetTracker.Triggers" xmlns:cl="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
     <DockPanel LastChildFill="False" >
         <StackPanel Orientation="Vertical" DockPanel.Dock="Left">
-            <TextBlock x:Name="Key" FontSize="18" >
-                
-            </TextBlock>
+            <TextBlock x:Name="Key" FontSize="18" />
+            
             <TextBlock x:Name="Username" FontSize="14" Foreground="Gray" />
         </StackPanel>
 

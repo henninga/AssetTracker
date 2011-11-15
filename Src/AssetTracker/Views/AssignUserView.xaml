@@ -25,9 +25,9 @@
                      SelectedItem="{Binding SelectedUser}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
+                        <StackPanel Margin="0 0 0 5" >
                             <TextBlock x:Name="FullName" Text="{Binding FullName}" />
-                            <TextBlock x:Name="Username" Text="{Binding Username}" />
+                            <TextBlock x:Name="Username" Text="{Binding Username}" Style="{StaticResource smallEmphasis}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
