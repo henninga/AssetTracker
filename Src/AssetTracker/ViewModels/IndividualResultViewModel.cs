@@ -13,6 +13,7 @@ namespace AssetTracker.ViewModels
 
         public IndividualResultViewModel(string id, string name)
         {
+            Id = id;
             Name = name;
         }
 

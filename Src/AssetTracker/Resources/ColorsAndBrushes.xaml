@@ -21,5 +21,17 @@
         <GradientStop Color="#FF094974"
                       Offset="1" />
     </LinearGradientBrush>
+    
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#444545" />
+    
+    <SolidColorBrush x:Key="activeButtonBrush" Color="#7FB239" />
+    <SolidColorBrush x:Key="activeButtonFontBrush" Color="#E8F4D9" />
+    <SolidColorBrush x:Key="activeButtonBorderBrush" Color="#BBDD8C" />
+    
+    <SolidColorBrush x:Key="inactiveButtonBrush" Color="#7FB239" />
+    <SolidColorBrush x:Key="inactiveButtonFontBrush" Color="#9E9E9E" />
+    <SolidColorBrush x:Key="inactiveButtonBorderBrush" Color="#9E9E9E" />
+
+    <SolidColorBrush x:Key="ApplicationNameBrush" Color="#8ACF1B" />
 
 </ResourceDictionary>

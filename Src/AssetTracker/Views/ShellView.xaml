@@ -1,17 +1,32 @@
-﻿<Window x:Class="AssetTracker.Views.ShellView"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-        xmlns:at="clr-namespace:AssetTracker.UserControls" Icon="..\Logo.ico" Title="Asset Tracker" >
+        xmlns:at="clr-namespace:AssetTracker.UserControls" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" 
+        x:Class="AssetTracker.Views.ShellView"
+        Icon="..\Logo.ico" Title="Asset Tracker"
+        Background="{StaticResource BackgroundBrush}">
 
-    <DockPanel >
-
-        <DockPanel DockPanel.Dock="Top" LastChildFill="True" >
-            <Button x:Name="Back" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left" Margin="8,15,0,0"  />
-            <at:BusyIndicator x:Name="IsBusy" DockPanel.Dock="Right" Margin="0,15,0,0"  />
-        </DockPanel>
-
-        <ContentControl DockPanel.Dock="Left" x:Name="ProgramSearch" />
+    <Grid Style="{StaticResource MainWindow}" >
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="70"/>
+    		<RowDefinition/>
+    	</Grid.RowDefinitions>
+        <TextBlock Text="asset tracker" Style="{StaticResource ApplicationName}" Grid.Row="0" Margin="66,0.25,0,0" />
         
-        <ContentControl DockPanel.Dock="Right" x:Name="ActiveItem" Margin="20 15 10 15"/>
-    </DockPanel>
+        <DockPanel Grid.Row="1">
+
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True" >
+                <Button x:Name="Back" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Left" Margin="8,15,0,0" />
+                <at:BusyIndicator x:Name="IsBusy" DockPanel.Dock="Right" Margin="0,15,0,0"  />
+            </DockPanel>
+
+            <ContentControl DockPanel.Dock="Left" x:Name="ProgramSearch" />
+
+            <ContentControl DockPanel.Dock="Right" x:Name="ActiveItem" Margin="20 15 10 15"/>
+        </DockPanel>
+        <Path Fill="{StaticResource ApplicationNameBrush}" Data="M81.744231,1.3372933E-06 L89.744231,1.3372933E-06 81.765738,32.000001 73.765738,32.000001 z M70.446234,1.3372933E-06 L78.446234,1.3372933E-06 70.467734,32.000001 62.467734,32.000001 z M59.159232,1.3372933E-06 L67.159232,1.3372933E-06 59.180735,32.000001 51.180735,32.000001 z M0.00043462032,0 L56.000002,0 48.000059,32.000001 0,32.000001 z" HorizontalAlignment="Left" Height="32" Margin="-30,7,0,0" Stretch="Fill" VerticalAlignment="Top" Width="89.744"/>
+    </Grid>
 </Window>

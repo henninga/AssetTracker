@@ -3,12 +3,12 @@
                     xmlns:ti="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
 
                     xmlns:tl="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit" 
-                    xmlns:UserControls="clr-namespace:AssetTracker.UserControls" xmlns:Interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:local="clr-namespace:AssetTracker.Triggers" xmlns:cl="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
+                    xmlns:UserControls="clr-namespace:AssetTracker.UserControls" xmlns:Interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:local="clr-namespace:AssetTracker.Triggers" xmlns:cl="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="ControlTemplates/Manifest.xaml" />
+    	<ResourceDictionary Source="ControlTemplates/Manifest.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="TextBlock">
+    <Style TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground"
                 Value="Black" />
         <Setter Property="FontSize"
@@ -19,14 +19,14 @@
                 Value="Wrap" />
     </Style>
 
-    <Style TargetType="tl:TransitioningContentControl">
+    <Style TargetType="{x:Type tl:TransitioningContentControl}">
         <Setter Property="HorizontalContentAlignment"
                 Value="Stretch" />
         <Setter Property="VerticalContentAlignment"
                 Value="Stretch" />
     </Style>
 
-    <Style TargetType="UserControls:BusyIndicator">
+    <Style TargetType="{x:Type UserControls:BusyIndicator}">
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="DisplayAfter"
@@ -43,7 +43,7 @@
                 Value="{StaticResource busyIndicator}" />
     </Style>
 
-    <Style TargetType="UserControls:HyperlinkButton">
+    <Style TargetType="{x:Type UserControls:HyperlinkButton}">
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="HorizontalContentAlignment"
@@ -56,7 +56,7 @@
                 Value="{StaticResource hyperlinkButton}" />
     </Style>
 
-    <Style TargetType="TextBox">
+    <Style TargetType="{x:Type TextBox}">
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="Background"
@@ -73,11 +73,9 @@
                 Value="Trebuchet MS" />
         <Setter Property="TextWrapping"
                 Value="Wrap" />
-        <!--<Setter Property="Template"
-                Value="{StaticResource textBox}" />-->
     </Style>
 
-    <Style TargetType="Button">
+    <!--<Style TargetType="Button">
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Foreground"
@@ -96,9 +94,9 @@
                 Value="Trebuchet MS" />
         <Setter Property="Template"
                 Value="{StaticResource button}" />
-    </Style>
+    </Style>-->
 
-    <Style TargetType="ListBoxItem">
+    <Style TargetType="{x:Type ListBoxItem}">
         <Style.Resources>
             <!--SelectedItem with focus-->
             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="LightBlue" Opacity=".4"/>
@@ -106,4 +104,5 @@
             <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="LightBlue" Opacity=".4"/>
         </Style.Resources>
     </Style>
+	
 </ResourceDictionary>
