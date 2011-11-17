@@ -5,6 +5,5 @@ namespace AssetTracker
     public interface IShell : IConductor
     {
         bool IsBusy { get; set; }
-        IScreen ProgramSearch { get; set; }
     }
 }

@@ -21,7 +21,7 @@
                 <Style TargetType="ProgressBar">
                     <Setter Property="IsIndeterminate" Value="True" />
                     <Setter Property="Height" Value="15"/>
-                    <Setter Property="Margin" Value="8,0,8,8"/>
+                    <!--<Setter Property="Margin" Value="8,0,8,8"/>-->
                 </Style>
             </Setter.Value>
         </Setter>
@@ -124,7 +124,7 @@
                                                     <RowDefinition />
                                                     <RowDefinition Height="Auto" />
                                                 </Grid.RowDefinitions>
-                                                <ContentPresenter Content="{TemplateBinding BusyContent}" ContentTemplate="{TemplateBinding BusyContentTemplate}" Margin="8" />
+                                                <ContentPresenter Content="{TemplateBinding BusyContent}" ContentTemplate="{TemplateBinding BusyContentTemplate}" />
                                                 <ProgressBar Grid.Row="1" Style="{TemplateBinding ProgressBarStyle}" />
                                             </Grid>
                                         </Border>
@@ -140,7 +140,7 @@
 
     <Style TargetType="local:HyperlinkButton">
         <Setter Property="Foreground" Value="#FF73A9D8" />
-        <Setter Property="Padding" Value="2,0,2,0"/>
+        <!--<Setter Property="Padding" Value="2,0,2,0"/>-->
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Top"/>

@@ -8,12 +8,31 @@
     </Style>
     
     <Style x:Key="ApplicationName" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="{StaticResource ApplicationNameBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ApplicationHeaderBrush}"/>
         <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}"/>
         <Setter Property="FontSize" Value="{StaticResource ApplicationNameFontSize}"/>
         <Setter Property="TextOptions.TextHintingMode" Value="Animated" />
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="66,0.25,0,0" />
+    </Style>
+    
+    <Style x:Key="NavigationMenuBorder" TargetType="Border">
+        <Setter Property="BorderThickness" Value="0,0,0,5" />
+        <Setter Property="BorderBrush" Value="{StaticResource ApplicationHeaderBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="0,7,0,24" />
+        <Setter Property="Padding" Value="15,0,0,0" />
+    </Style>
+    
+    <Style x:Key="NavigationMenuItem" TargetType="UserControls:HyperlinkButton">
+        <Setter Property="Margin" Value="10 0 0 0" />
+        <Setter Property="FontSize" Value="{StaticResource NavigationFontSize}" />
+        <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Template" Value="{StaticResource hyperlinkButton}" />
+        <Setter Property="Padding" Value="10 -6 0 0" />
     </Style>
     
     

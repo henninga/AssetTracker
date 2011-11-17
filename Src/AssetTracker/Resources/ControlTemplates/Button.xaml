@@ -8,21 +8,7 @@
                 <VisualStateGroup x:Name="CommonStates">
                     <VisualState x:Name="Normal" />
                     <VisualState x:Name="MouseOver">
-                        <Storyboard>
-                            <ObjectAnimationUsingKeyFrames Duration="0"
-                                                           Storyboard.TargetProperty="Effect"
-                                                           Storyboard.TargetName="Background">
-                                <DiscreteObjectKeyFrame KeyTime="0">
-                                    <DiscreteObjectKeyFrame.Value>
-                                        <DropShadowEffect BlurRadius="10"
-                                                          Color="#FF09D1EE"
-                                                          Opacity=".75"
-                                                          ShadowDepth="0"
-                                                          Direction="0" />
-                                    </DiscreteObjectKeyFrame.Value>
-                                </DiscreteObjectKeyFrame>
-                            </ObjectAnimationUsingKeyFrames>
-                        </Storyboard>
+                        
                     </VisualState>
                     <VisualState x:Name="Pressed">
                         <Storyboard>
@@ -52,26 +38,12 @@
                 </VisualStateGroup>
                 <VisualStateGroup x:Name="FocusStates">
                     <VisualState x:Name="Focused">
-                        <Storyboard>
-                            <ObjectAnimationUsingKeyFrames Duration="0"
-                                                           Storyboard.TargetProperty="Effect"
-                                                           Storyboard.TargetName="Background">
-                                <DiscreteObjectKeyFrame KeyTime="0">
-                                    <DiscreteObjectKeyFrame.Value>
-                                        <DropShadowEffect BlurRadius="10"
-                                                          Color="#FF09D1EE"
-                                                          Opacity=".75"
-                                                          ShadowDepth="0"
-                                                          Direction="0" />
-                                    </DiscreteObjectKeyFrame.Value>
-                                </DiscreteObjectKeyFrame>
-                            </ObjectAnimationUsingKeyFrames>
-                        </Storyboard>
+                        
                     </VisualState>
                     <VisualState x:Name="Unfocused" />
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Border x:Name="Background"
+            <!--<Border x:Name="Background"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     Background="{TemplateBinding Background}"
@@ -84,7 +56,7 @@
                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                   Margin="{TemplateBinding Padding}"
                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-            </Border>
+            </Border>-->
 
             <Rectangle x:Name="DisabledVisualElement"
                        RadiusX="16"

@@ -38,7 +38,9 @@
                               Content="{TemplateBinding Content}"
                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                               Margin="{TemplateBinding Padding}"
-                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                              
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              />
         </Grid>
     </ControlTemplate>
 

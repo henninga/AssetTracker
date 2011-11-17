@@ -8,7 +8,7 @@
     	<ResourceDictionary Source="ControlTemplates/Manifest.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type TextBlock}">
+    <!--<Style TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground"
                 Value="Black" />
         <Setter Property="FontSize"
@@ -24,26 +24,20 @@
                 Value="Stretch" />
         <Setter Property="VerticalContentAlignment"
                 Value="Stretch" />
-    </Style>
+    </Style>-->
 
     <Style TargetType="{x:Type UserControls:BusyIndicator}">
-        <Setter Property="IsTabStop"
-                Value="False" />
-        <Setter Property="DisplayAfter"
-                Value="00:00:00.1" />
-        <Setter Property="HorizontalAlignment"
-                Value="Stretch" />
-        <Setter Property="VerticalAlignment"
-                Value="Stretch" />
-        <Setter Property="HorizontalContentAlignment"
-                Value="Stretch" />
-        <Setter Property="VerticalContentAlignment"
-                Value="Stretch" />
-        <Setter Property="Template"
-                Value="{StaticResource busyIndicator}" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="DisplayAfter" Value="00:00:00.1" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template" Value="{StaticResource busyIndicator}" />
+        <Setter Property="Margin" Value="0,-10,0,0" />
     </Style>
 
-    <Style TargetType="{x:Type UserControls:HyperlinkButton}">
+    <!--<Style TargetType="{x:Type UserControls:HyperlinkButton}">
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="HorizontalContentAlignment"
@@ -54,7 +48,7 @@
                 Value="Transparent" />
         <Setter Property="Template"
                 Value="{StaticResource hyperlinkButton}" />
-    </Style>
+    </Style>-->
 
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="BorderThickness"
@@ -75,26 +69,19 @@
                 Value="Wrap" />
     </Style>
 
-    <!--<Style TargetType="Button">
-        <Setter Property="Background"
-                Value="Transparent" />
-        <Setter Property="Foreground"
-                Value="Gray" />
-        <Setter Property="Padding"
-                Value="8 3 8 3" />
-        <Setter Property="Margin"
-                Value="8 0 0 0" />
-        <Setter Property="BorderThickness"
-                Value="2" />
-        <Setter Property="BorderBrush"
-                Value="Gray" />
-        <Setter Property="FontSize"
-                Value="20" />
-        <Setter Property="FontFamily"
-                Value="Trebuchet MS" />
-        <Setter Property="Template"
-                Value="{StaticResource button}" />
-    </Style>-->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource activeButtonBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource activeButtonFontBrush}" />
+        <Setter Property="Padding" Value="8 3 8 3" />
+        <Setter Property="Margin" Value="8 0 0 0" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="FontSize" Value="20" />
+
+        <Setter Property="FontFamily" Value="{StaticResource ContentFontFamily}" />
+        <!--<Setter Property="Template"
+                Value="{StaticResource button}" />-->
+    </Style>
 
     <Style TargetType="{x:Type ListBoxItem}">
         <Style.Resources>

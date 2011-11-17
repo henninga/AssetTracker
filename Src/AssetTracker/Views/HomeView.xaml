@@ -9,5 +9,7 @@
             </StackPanel>
         </local:HyperlinkButton>
         <TextBlock Text="Home of Asset Tracker" />
+
+        <ContentControl DockPanel.Dock="Left" x:Name="ProgramSearch" />
     </StackPanel>
 </UserControl>

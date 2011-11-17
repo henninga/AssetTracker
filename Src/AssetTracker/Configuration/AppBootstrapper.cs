@@ -23,6 +23,7 @@ namespace AssetTracker.Configuration
             _container = new Container(new AssetTrackerRegistry());
             ConventionManager.AddElementConvention<BusyIndicator>(BusyIndicator.IsBusyProperty, "IsBusy", null);
             ConventionManager.AddElementConvention<MenuItem>(MenuItem.CommandProperty, "Command", null);
+            
             LogManager.GetLog = type => new DebugLog();
             Copy.CopyAction = source => { Clipboard.SetText(source); };
 

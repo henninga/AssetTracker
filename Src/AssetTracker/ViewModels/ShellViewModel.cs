@@ -18,11 +18,9 @@ namespace AssetTracker.ViewModels
 
             DisplayName = "Asset Tracker";
         }
-
-
+        
         public bool IsBusy { get; set; }
-        public IScreen ProgramSearch { get; set; }
-
+        
         public IEnumerable<IResult> Back()
         {
             yield return Show.Busy();
@@ -33,8 +31,6 @@ namespace AssetTracker.ViewModels
         protected override void OnActivate()
         {
             ActivateItem(_startViewModel);
-            ProgramSearch = new ProgramSearchViewModel();
-            ProgramSearch.ActivateWith(this);
         }
     }
 }
