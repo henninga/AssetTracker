@@ -21,7 +21,7 @@ namespace AssetTracker.ViewModels
         
         public bool IsBusy { get; set; }
         
-        public IEnumerable<IResult> Back()
+        public IEnumerable<IResult> Home()
         {
             yield return Show.Busy();
             yield return Show.Screen<HomeViewModel>();

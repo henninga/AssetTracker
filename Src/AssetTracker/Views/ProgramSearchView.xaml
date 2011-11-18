@@ -4,13 +4,13 @@
              xmlns:local="clr-namespace:AssetTracker.UserControls" 
              xmlns:cm="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
-             xmlns:Triggers="clr-namespace:AssetTracker.Triggers">
+             xmlns:Triggers="clr-namespace:AssetTracker.Triggers" xmlns:Controls="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit.Extended">
 
     <DockPanel Margin="10 0 0 0">
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 0">
-            <TextBox x:Name="SearchText" Width="200" AcceptsReturn="False" />
+            <Controls:WatermarkTextBox x:Name="SearchText" Width="200" AcceptsReturn="False" Watermark="Enter search text" />
             <Button x:Name="ExecuteSearch" Content="Search" IsDefault="True" />
         </StackPanel>
-        <ContentControl x:Name="Results" DockPanel.Dock="Bottom" Margin="0 15 0 0" HorizontalAlignment="Left" />
+        <ContentControl x:Name="Results" DockPanel.Dock="Bottom" Margin="0 15 0 0" HorizontalAlignment="Center" />
     </DockPanel>
 </UserControl>

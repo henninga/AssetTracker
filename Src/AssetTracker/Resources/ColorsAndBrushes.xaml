@@ -22,14 +22,23 @@
     </LinearGradientBrush>
     
     <SolidColorBrush x:Key="BackgroundBrush" Color="#444545" />
+
+    <Color x:Key="inactiveButtonColor" ScR="127" ScG="178" ScB="57" ScA="255" />
+    <Color x:Key="inactiveButtonFontColor" ScR="158" ScG="158" ScB="158" ScA="255" />
+    <Color x:Key="inactiveButtonBorderColor" ScR="158" ScG="158" ScB="158" ScA="255" />
+
+    <SolidColorBrush x:Key="evenColorBrush" Color="#2F2F2F" />
+    <SolidColorBrush x:Key="oddColorBrush" Color="#414141" />
+
+    <SolidColorBrush x:Key="ContentFontColorBrush" Color="#D2D2D2" />
     
-    <SolidColorBrush x:Key="activeButtonBrush" Color="#7FB239" />
+    <SolidColorBrush x:Key="activeButtonBrush" Color="#8ACF1B" />
     <SolidColorBrush x:Key="activeButtonFontBrush" Color="#E8F4D9" />
     <SolidColorBrush x:Key="activeButtonBorderBrush" Color="#BBDD8C" />
-    
-    <SolidColorBrush x:Key="inactiveButtonBrush" Color="#7FB239" />
-    <SolidColorBrush x:Key="inactiveButtonFontBrush" Color="#9E9E9E" />
-    <SolidColorBrush x:Key="inactiveButtonBorderBrush" Color="#9E9E9E" />
+
+    <SolidColorBrush x:Key="inactiveButtonBrush" Color="{StaticResource inactiveButtonColor}" />
+    <SolidColorBrush x:Key="inactiveButtonFontBrush" Color="{StaticResource inactiveButtonFontColor}" />
+    <SolidColorBrush x:Key="inactiveButtonBorderBrush" Color="{StaticResource inactiveButtonBorderColor}" />
 
     <SolidColorBrush x:Key="ApplicationHeaderBrush" Color="#8ACF1B" />
 

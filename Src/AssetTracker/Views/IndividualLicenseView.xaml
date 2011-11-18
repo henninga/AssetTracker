@@ -1,21 +1,23 @@
 ﻿<UserControl x:Class="AssetTracker.Views.IndividualLicenseView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:local="clr-namespace:AssetTracker.Triggers" xmlns:cl="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
-    <DockPanel LastChildFill="False" >
-        <StackPanel Orientation="Vertical" DockPanel.Dock="Left">
-            <TextBlock x:Name="Key" FontSize="18" />
-            
-            <TextBlock x:Name="Username" FontSize="14" Foreground="Gray" />
-        </StackPanel>
+    <Border BorderThickness="0,0,0,1" BorderBrush="LightGray" Background="Red" >
+        <DockPanel LastChildFill="False">
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Left">
+                <TextBlock x:Name="Key" FontSize="18" />
 
-        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-            <Button x:Name="AssignUser" Content="Tildel" />
-            <Button x:Name="EditLicense" Content="Endre" />
-            <Button x:Name="DeleteLicense" Content="Slett" />
-            
-        </StackPanel>
-        
-    </DockPanel>
+                <TextBlock x:Name="Username" FontSize="14" Foreground="Gray" />
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <Button x:Name="AssignUser" Content="Tildel" />
+                <Button x:Name="EditLicense" Content="Endre" />
+                <Button x:Name="DeleteLicense" Content="Slett" />
+
+            </StackPanel>
+
+        </DockPanel>
+    </Border>
     <i:Interaction.Triggers>
         <local:InputBindingTrigger >
             <local:InputBindingTrigger.InputBinding >

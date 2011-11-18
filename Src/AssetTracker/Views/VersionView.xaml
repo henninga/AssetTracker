@@ -7,16 +7,41 @@
         <local:HyperlinkButton DockPanel.Dock="Top" x:Name="NewLicense" HorizontalAlignment="Right" >
             <TextBlock Text="+ Ny lisens" />
         </local:HyperlinkButton>
+        <!--<ItemsControl x:Name="Licenses" AlternationCount="2">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate >
+                    <Border Background="Transparent"> 
+                        <ContentControl cm:View.Model="{Binding}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" IsTabStop="False" />
+
+                        <ContextMenuService.ContextMenu>
+                            <ContextMenu >
+                                <MenuItem Header="Copy to clipboard" cm:Message.Attach="[Event Click] = [Action CopyKey()]" />
+                            </ContextMenu>
+                        </ContextMenuService.ContextMenu>
+                        <i:Interaction.Triggers>
+                            <Triggers:InputBindingTrigger >
+                                <Triggers:InputBindingTrigger.InputBinding >
+                                    <KeyBinding Modifiers="Ctrl" Key="C"/>
+                                </Triggers:InputBindingTrigger.InputBinding>
+                                <cm:ActionMessage MethodName="CopyKey" />
+                            </Triggers:InputBindingTrigger>
+                        </i:Interaction.Triggers>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            
+        </ItemsControl>-->
         <ListBox x:Name="Licenses"
                  DockPanel.Dock="Bottom"
                  Style="{StaticResource licenses}" 
                  ScrollViewer.CanContentScroll="True" 
                  VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Stretch">
+                 HorizontalContentAlignment="Stretch"
+                 AlternationCount="2">
 
             <ListBox.ItemTemplate >
                 <DataTemplate >
-                    <Border Background="Transparent"> <!--Background is set to Transparent so the context menu will appear on the entire item and not where controls are painted/displayed.-->
+                    <Border Background="Transparent"><!--Background is set to Transparent so the context menu will appear on the entire item and not where controls are painted/displayed.-->
                         <ContentControl cm:View.Model="{Binding}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" IsTabStop="False" />
 
                         <ContextMenuService.ContextMenu>

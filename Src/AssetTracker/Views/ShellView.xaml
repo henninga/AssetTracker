@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:at="clr-namespace:AssetTracker.UserControls" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        mc:Ignorable="d" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cm="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" mc:Ignorable="d" 
         x:Class="AssetTracker.Views.ShellView"
         Icon="..\Logo.ico" Title="Asset Tracker"
         Background="{StaticResource BackgroundBrush}" d:DesignWidth="746">
@@ -26,12 +25,12 @@
 
         <Border Style="{StaticResource NavigationMenuBorder}" Grid.Row="0" Grid.ColumnSpan="2" >
             <StackPanel Orientation="Horizontal">
-                <at:HyperlinkButton x:Name="Home" Content="home" Style="{StaticResource NavigationMenuItem}"  />
+                <at:HyperlinkButton x:Name="Home" Content="home" Style="{StaticResource NavigationMenuItem}"   />
                 <at:HyperlinkButton Content="licenses" Style="{StaticResource NavigationMenuItem}" />
                 <at:HyperlinkButton Content="hardware" Style="{StaticResource NavigationMenuItem}" />
             </StackPanel>
         </Border>
 
-        <ContentControl Grid.Row="1" Grid.ColumnSpan="2" x:Name="ActiveItem" Margin="20 15 20 15"/>
+        <ContentControl Grid.Row="1" Grid.ColumnSpan="2" x:Name="ActiveItem" Margin="20,15"/>
     </Grid>
 </Window>

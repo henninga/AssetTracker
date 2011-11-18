@@ -3,22 +3,16 @@
                     xmlns:ti="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
 
                     xmlns:tl="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit" 
-                    xmlns:UserControls="clr-namespace:AssetTracker.UserControls" xmlns:Interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:local="clr-namespace:AssetTracker.Triggers" xmlns:cl="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+                    xmlns:UserControls="clr-namespace:AssetTracker.UserControls" xmlns:Interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:local="clr-namespace:AssetTracker.Triggers" xmlns:cl="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" xmlns:Controls="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit.Extended">
     <ResourceDictionary.MergedDictionaries>
     	<ResourceDictionary Source="ControlTemplates/Manifest.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--<Style TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground"
-                Value="Black" />
-        <Setter Property="FontSize"
-                Value="20" />
-        <Setter Property="FontFamily"
-                Value="Trebuchet MS" />
-        <Setter Property="TextWrapping"
-                Value="Wrap" />
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource ContentFontColorBrush}" />
     </Style>
 
+    <!--
     <Style TargetType="{x:Type tl:TransitioningContentControl}">
         <Setter Property="HorizontalContentAlignment"
                 Value="Stretch" />
@@ -26,7 +20,7 @@
                 Value="Stretch" />
     </Style>-->
 
-    <Style TargetType="{x:Type UserControls:BusyIndicator}">
+    <Style TargetType="UserControls:BusyIndicator">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="DisplayAfter" Value="00:00:00.1" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -37,36 +31,24 @@
         <Setter Property="Margin" Value="0,-10,0,0" />
     </Style>
 
-    <!--<Style TargetType="{x:Type UserControls:HyperlinkButton}">
-        <Setter Property="Cursor"
-                Value="Hand" />
-        <Setter Property="HorizontalContentAlignment"
-                Value="Left" />
-        <Setter Property="VerticalContentAlignment"
-                Value="Top" />
-        <Setter Property="Background"
-                Value="Transparent" />
-        <Setter Property="Template"
-                Value="{StaticResource hyperlinkButton}" />
-    </Style>-->
+    <Style TargetType="UserControls:HyperlinkButton">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}" />
+        <Setter Property="Template" Value="{StaticResource hyperlinkButton}" />
+    </Style>
 
-    <Style TargetType="{x:Type TextBox}">
-        <Setter Property="BorderThickness"
-                Value="1" />
-        <Setter Property="Background"
-                Value="White" />
-        <Setter Property="Foreground"
-                Value="Black" />
-        <Setter Property="Padding"
-                Value="2" />
-        <Setter Property="BorderBrush"
-                Value="Gray" />
-        <Setter Property="FontSize"
-                Value="20" />
-        <Setter Property="FontFamily"
-                Value="Trebuchet MS" />
-        <Setter Property="TextWrapping"
-                Value="Wrap" />
+    <Style TargetType="TextBox">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource ContentFontFamily}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
 
     <Style TargetType="Button">
@@ -75,15 +57,41 @@
         <Setter Property="Padding" Value="8 3 8 3" />
         <Setter Property="Margin" Value="8 0 0 0" />
         <Setter Property="BorderThickness" Value="2" />
-        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="BorderBrush" Value="{StaticResource activeButtonBorderBrush}" />
         <Setter Property="FontSize" Value="20" />
 
         <Setter Property="FontFamily" Value="{StaticResource ContentFontFamily}" />
-        <!--<Setter Property="Template"
-                Value="{StaticResource button}" />-->
+        <Setter Property="Template"
+                Value="{StaticResource button}" />
     </Style>
 
-    <Style TargetType="{x:Type ListBoxItem}">
+    <Style TargetType="Controls:WatermarkTextBox">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource ContentFontFamily}" />
+
+        <Setter Property="WatermarkTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentControl Content="{Binding}" Foreground="Gray" Focusable="False" FontSize="20" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    
+    <Style TargetType="ListItem">
+        <Style.Triggers>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                <Setter Property="Background" Value="{StaticResource evenColorBrush}"/>
+                
+            </Trigger>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                <Setter Property="Background" Value="{StaticResource oddColorBrush}"/>
+                
+            </Trigger>
+        </Style.Triggers>
         <Style.Resources>
             <!--SelectedItem with focus-->
             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="LightBlue" Opacity=".4"/>

@@ -30,6 +30,6 @@
                 </local:HyperlinkButton>
             </StackPanel>
         </StackPanel>
-        <TabControl x:Name="Items" DockPanel.Dock="Bottom" TabStripPlacement="Left" Margin="0" SelectedItem="{Binding CurrentSelection}"  />
+        <TabControl x:Name="Items" DockPanel.Dock="Bottom" TabStripPlacement="Top" Margin="0" SelectedItem="{Binding CurrentSelection}" Background="Transparent" />
     </DockPanel>
 </UserControl>

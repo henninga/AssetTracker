@@ -29,24 +29,28 @@
         <Setter Property="Margin" Value="10 0 0 0" />
         <Setter Property="FontSize" Value="{StaticResource NavigationFontSize}" />
         <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}" />
+        
         <Setter Property="VerticalContentAlignment" Value="Top" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Template" Value="{StaticResource hyperlinkButton}" />
         <Setter Property="Padding" Value="10 -6 0 0" />
     </Style>
-    
-    
-    
-    
-    
-    <Style TargetType="TextBlock"
-           x:Key="header">
-        <Setter Property="Foreground"
-                Value="Black" />
-        <Setter Property="FontSize"
-                Value="36" />
-        <Setter Property="FontFamily"
-                Value="Trebuchet MS" />
+
+    <Style x:Key="IndividualSearchResult" TargetType="UserControls:HyperlinkButton">
+        <Setter Property="FontSize" Value="{StaticResource SearchResultsFontSize}" />
+        <Setter Property="FontFamily" Value="{StaticResource ContentFontFamily}" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Template" Value="{StaticResource hyperlinkButton}" />
+    </Style>
+
+
+
+
+
+    <Style TargetType="TextBlock" x:Key="header">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="FontSize" Value="36" />
         <Setter Property="Effect">
             <Setter.Value>
                 <DropShadowEffect BlurRadius="10"
@@ -95,19 +99,15 @@
 
     <Style TargetType="TextBlock"
            x:Key="smallEmphasis">
-        <Setter Property="Foreground"
-                Value="Gray" />
-        <Setter Property="FontSize"
-                Value="18" />
-        <Setter Property="FontFamily"
-                Value="Trebuchet MS" />
-        <Setter Property="TextWrapping"
-                Value="Wrap" />
-        <Setter Property="FontStyle"
-                Value="Italic" />
+        <Setter Property="Foreground" Value="Gray" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontFamily" Value="Trebuchet MS" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontStyle" Value="Italic" />
     </Style>
 
     <Style TargetType="ListBox" x:Key="licenses">
+
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding Items.Count, RelativeSource={RelativeSource Self}}" Value="0">

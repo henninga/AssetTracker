@@ -22,7 +22,6 @@ namespace AssetTracker.Queries
 
             ThreadPool.QueueUserWorkItem(state => _ravenQuery.Execute(session, response =>
             {
-                Thread.Sleep(5000);
                 Response = response;
                 Caliburn.Micro.Execute.OnUIThread(() => Completed(this, new ResultCompletionEventArgs()));
             }));

@@ -30,7 +30,7 @@
                     <VisualState x:Name="Disabled">
                         <Storyboard>
                             <DoubleAnimation Duration="0"
-                                             To=".15"
+                                             To=".3"
                                              Storyboard.TargetProperty="Opacity"
                                              Storyboard.TargetName="DisabledVisualElement" />
                         </Storyboard>
@@ -43,11 +43,11 @@
                     <VisualState x:Name="Unfocused" />
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <!--<Border x:Name="Background"
+            <Border x:Name="Background"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     Background="{TemplateBinding Background}"
-                    CornerRadius="16"
+                    
                     MinWidth="75">
                 <ContentPresenter x:Name="contentPresenter"
                                   
@@ -56,11 +56,10 @@
                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                   Margin="{TemplateBinding Padding}"
                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-            </Border>-->
+            </Border>
 
             <Rectangle x:Name="DisabledVisualElement"
-                       RadiusX="16"
-                       RadiusY="16"
+
                        Fill="LightGray"
                        IsHitTestVisible="false"
                        Opacity="0" />

@@ -2,7 +2,6 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" xmlns:local="clr-namespace:AssetTracker.UserControls">
-    <local:HyperlinkButton x:Name="Open">
-        <TextBlock x:Name="Name" Text="{Binding Name}" />
-    </local:HyperlinkButton>
+    <local:HyperlinkButton x:Name="Open" Content="{Binding Name}" Style="{StaticResource IndividualSearchResult}" />
+        
 </UserControl>
